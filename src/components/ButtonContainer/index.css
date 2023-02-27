@@ -1,0 +1,17 @@
+#keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+#keys button {
+  color: var(--bg-color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+#keys button:hover {
+  filter: brightness(0.8);
+}
