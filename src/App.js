@@ -1,7 +1,12 @@
 import "./App.css";
+import CalcScreen from "./screens/CalcScreen";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <CalcScreen></CalcScreen>
+    </>
+  );
 }
 
 export default App;
