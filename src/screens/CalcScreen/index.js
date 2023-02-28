@@ -16,7 +16,7 @@ const CalcScreen = () => {
   return (
     <main data-theme="dark">
       <Header></Header>
-      <Input type={"text"} id={"input"}></Input>
+      <Input type={"text"} id={"input"} value={field}></Input>
       <ButtonContainer btnOnClickChange={onClickChange}></ButtonContainer>
       <Section></Section>
     </main>
