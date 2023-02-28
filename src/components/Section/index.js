@@ -5,7 +5,7 @@ import "./index.css";
 
 const Section = () => {
   return (
-    <section>
+    <section className="flex align-center justify-between">
       <Button id={"copyToClipboard"} value={"Copy"}></Button>
       <Input type={"text"} id={"result"} isDisabled={true}></Input>
     </section>
