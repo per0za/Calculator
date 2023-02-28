@@ -10,13 +10,28 @@ const CalcScreen = () => {
 
   const onClickChange = (ev) => {
     const value = ev.currentTarget.dataset.value;
+    const input = document.getElementById("input");
+
+    if (value === "C") {
+      setField("");
+      input.focus();
+      return;
+    }
+
+    const fieldValue = field + value;
+    setField(fieldValue);
+    console.log(value);
+  };
+
+  const onKeyDownFunction = (ev) => {
+    const value = ev.currentTarget.value;
     console.log(value);
   };
 
   return (
     <main data-theme="dark">
       <Header></Header>
-      <Input type={"text"} id={"input"} value={field}></Input>
+      <Input type={"text"} id={"input"} value={field} onChangeFunction={onKeyDownFunction}></Input>
       <ButtonContainer btnOnClickChange={onClickChange}></ButtonContainer>
       <Section></Section>
     </main>

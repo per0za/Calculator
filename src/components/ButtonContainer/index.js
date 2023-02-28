@@ -5,7 +5,7 @@ import "./index.css";
 const ButtonContainer = ({ btnOnClickChange }) => {
   return (
     <div id="keys">
-      <Button id={"clear"} value={"C"}></Button>
+      <Button id={"clear"} dataValue={"C"} value={"C"} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={" ( "} value={" ( "} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={" ) "} value={" ) "} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={" / "} value={" / "} onClickFunction={btnOnClickChange}></Button>
@@ -24,7 +24,7 @@ const ButtonContainer = ({ btnOnClickChange }) => {
       <Button classes={"charkey"} dataValue={"0"} value={"0"} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={"."} value={"."} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={" % "} value={"mod"} onClickFunction={btnOnClickChange}></Button>
-      <Button id={"equal"} value={"="}></Button>
+      <Button id={"equal"} dataValue={"="} value={"="}></Button>
     </div>
   );
 };
