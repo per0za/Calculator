@@ -12,6 +12,14 @@
   --error-color: #ff0043;
 }
 
+main {
+  display: block;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 0 1.5rem 2.5rem;
+  position: relative;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--font-color);
@@ -22,6 +30,7 @@ body {
   background-color: var(--bg-color);
   border: 0.125rem solid var(--font-color);
   color: var(--font-color);
+  cursor: pointer;
 }
 
 #themeSwitcher:hover {
