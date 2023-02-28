@@ -23,6 +23,8 @@ const CalcScreen = () => {
     console.log(value);
   };
 
+  const calculate = () => {};
+
   const onKeyDownFunction = (ev) => {
     const value = ev.currentTarget.value;
     console.log(value);

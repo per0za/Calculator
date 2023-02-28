@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button";
 import "./index.css";
 
-const ButtonContainer = ({ btnOnClickChange }) => {
+const ButtonContainer = ({ btnOnClickChange, calculateFunction }) => {
   return (
     <div id="keys">
       <Button id={"clear"} dataValue={"C"} value={"C"} onClickFunction={btnOnClickChange}></Button>
@@ -24,7 +24,7 @@ const ButtonContainer = ({ btnOnClickChange }) => {
       <Button classes={"charkey"} dataValue={"0"} value={"0"} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={"."} value={"."} onClickFunction={btnOnClickChange}></Button>
       <Button classes={"charkey"} dataValue={" % "} value={"mod"} onClickFunction={btnOnClickChange}></Button>
-      <Button id={"equal"} dataValue={"="} value={"="}></Button>
+      <Button id={"equal"} dataValue={"="} value={"="} onClickFunction={calculateFunction}></Button>
     </div>
   );
 };
