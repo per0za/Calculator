@@ -41,15 +41,15 @@ const CalcScreen = () => {
     }
   };
 
-  const onKeyDownFunction = (ev) => {
-    const value = ev.currentTarget.value;
-    console.log(value);
+  const onChangeFunction = (ev) => {
+    const allowedKeys = ["(", ")", "/", "7", "8", "9", "*", "4", " 5", "6", "-", "1", "2", "3", "+", "0", ".", "%"];
+    console.log(ev.key);
   };
 
   return (
     <main data-theme="dark">
       <Header></Header>
-      <Input type={"text"} id={"input"} value={inputValue} onChangeFunction={onKeyDownFunction}></Input>
+      <Input type={"text"} id={"input"} value={inputValue} onChangeFunction={onChangeFunction}></Input>
       <ButtonContainer btnOnClickChange={onClickChange} calculateFunction={calculate}></ButtonContainer>
       <Section></Section>
     </main>
