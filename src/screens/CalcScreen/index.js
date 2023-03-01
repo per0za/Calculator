@@ -6,24 +6,40 @@ import Section from "../../components/Section";
 import "./index.css";
 
 const CalcScreen = () => {
-  const [field, setField] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   const onClickChange = (ev) => {
     const value = ev.currentTarget.dataset.value;
     const input = document.getElementById("input");
 
     if (value === "C") {
-      setField("");
+      setInputValue("");
       input.focus();
       return;
     }
 
-    const fieldValue = field + value;
-    setField(fieldValue);
+    const fieldValue = inputValue + value;
+    setInputValue(fieldValue);
     console.log(value);
   };
 
-  const calculate = () => {};
+  const calculate = () => {
+    const input = document.getElementById("input");
+    const resultInput = document.getElementById("result");
+    try {
+      const result = eval(input.value);
+      resultInput.value = result;
+    } catch (error) {
+      resultInput.value = "ERROR";
+      resultInput.classList.add("error");
+      setTimeout(() => {
+        resultInput.classList.remove("error");
+        resultInput.value = "";
+        input.focus();
+        setInputValue("");
+      }, 2 * 1000);
+    }
+  };
 
   const onKeyDownFunction = (ev) => {
     const value = ev.currentTarget.value;
@@ -33,8 +49,8 @@ const CalcScreen = () => {
   return (
     <main data-theme="dark">
       <Header></Header>
-      <Input type={"text"} id={"input"} value={field} onChangeFunction={onKeyDownFunction}></Input>
-      <ButtonContainer btnOnClickChange={onClickChange}></ButtonContainer>
+      <Input type={"text"} id={"input"} value={inputValue} onChangeFunction={onKeyDownFunction}></Input>
+      <ButtonContainer btnOnClickChange={onClickChange} calculateFunction={calculate}></ButtonContainer>
       <Section></Section>
     </main>
   );
