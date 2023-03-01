@@ -4,21 +4,23 @@ import Input from "../Input";
 import "./index.css";
 
 const Section = () => {
-  const copy = () => {
+  const copy = (ev) => {
     const button = ev.currentTarget;
-    if (button.innerText === "Copy") {
-      button.innerText = "Copied!";
-      button.classList.add("success");
-      navigator.clipboard.writeText(resultInput.value);
-    } else {
+    const resultInput = document.getElementById("result");
+
+    button.innerText = "Copied!";
+    button.classList.add("success");
+    navigator.clipboard.writeText(resultInput.value);
+
+    setTimeout(() => {
       button.innerText = "Copy";
       button.classList.remove("success");
-    }
+    }, 3 * 1000);
   };
 
   return (
     <section className="flex align-center justify-between">
-      <Button id={"copyToClipboard"} value={"Copy"}></Button>
+      <Button id={"copyToClipboard"} value={"Copy"} onClickFunction={copy}></Button>
       <Input type={"text"} id={"result"} isDisabled={true}></Input>
     </section>
   );
