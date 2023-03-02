@@ -42,10 +42,7 @@ const CalcScreen = () => {
   };
 
   const onChangeFunction = (ev) => {
-    const keyValue = ev.currentTarget.value;
-    const fieldValue = inputValue + keyValue;
-    setInputValue(fieldValue);
-    console.log(inputValue);
+    console.log(ev.currentTarget.key);
   };
 
   return (
