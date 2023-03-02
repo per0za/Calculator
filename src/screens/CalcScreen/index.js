@@ -7,6 +7,9 @@ import "./index.css";
 
 const CalcScreen = () => {
   const [inputValue, setInputValue] = useState("");
+  const allowedKeys = ["(", ")", "/", "7", "8", "9", "*", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "%"];
+  const numbers = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"];
+
 
   const onClickChange = (ev) => {
     const value = ev.currentTarget.dataset.value;
@@ -41,14 +44,32 @@ const CalcScreen = () => {
     }
   };
 
-  const onChangeFunction = (ev) => {
-    console.log(ev.currentTarget.key);
+  const onChangeFunction = (value) => {
+    setInputValue(value) 
   };
+
+  const onKeyDownFunction = (ev) => {
+    ev.preventDefault();
+    if (allowedKeys.includes(ev.key)) {
+      if (numbers.includes(ev.key)) {
+        onChangeFunction(inputValue + ev.key)
+      } else {
+        onChangeFunction(inputValue + ` ${ev.key} `)
+      }
+      return;
+    }
+    if (ev.key === "Backspace") {
+      setInputValue(inputValue.slice(0, -1));
+    }
+    if (ev.key === "Enter") {
+      calculate();
+    }
+  }
 
   return (
     <main data-theme="dark">
       <Header></Header>
-      <Input type={"text"} id={"input"} value={inputValue} onChangeFunction={onChangeFunction}></Input>
+      <Input type={"text"} id={"input"} value={inputValue} onChangeFunction={onChangeFunction} onKeyDownFunction={onKeyDownFunction} ></Input>
       <ButtonContainer btnOnClickChange={onClickChange} calculateFunction={calculate}></ButtonContainer>
       <Section></Section>
     </main>
