@@ -1,3 +1,30 @@
 header {
   padding: 2rem 0;
+  display: flex;
+}
+
+#themeSwitcher {
+  background-color: var(--bg-color);
+  border: 0.125rem solid var(--font-color);
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+#themeSwitcher:hover {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}
+
+@media (max-width: 424.98px) {
+  header {
+    flex-direction: column;
+  }
+
+  header > h1 {
+    text-align: center;
+  }
+
+  header > button {
+    margin-top: 1.5rem;
+  }
 }

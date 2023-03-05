@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex align-center justify-between">
+    <header className="align-center justify-between">
       <h1>Calculator</h1>
       <Button id={"themeSwitcher"} value={"Switch Theme Dark/Light"} onClickFunction={themeSwitch}></Button>
     </header>

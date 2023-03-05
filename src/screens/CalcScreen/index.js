@@ -23,7 +23,6 @@ const CalcScreen = () => {
 
     const fieldValue = inputValue + value;
     setInputValue(fieldValue);
-    console.log(value);
   };
 
   const calculate = () => {
